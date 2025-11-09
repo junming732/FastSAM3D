@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "FastSAM3D"
+version = "1.0.0"
+description = "Fast Segment Anything Model for 3D Volumetric Medical Images"
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "numpy",
+    "scipy",
+    "SimpleITK",
+    "torchio",
+    "edt",
+    "thop",
+    "torchinfo",
+    "monai",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["segment_anything*"]
