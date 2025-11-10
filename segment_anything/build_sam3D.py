@@ -115,7 +115,7 @@ def _build_sam3D(
     sam.eval()
     if checkpoint is not None:
         with open(checkpoint, "rb") as f:
-            state_dict = torch.load(f)
+            state_dict = torch.load(f, weights_only=False)
         sam.load_state_dict(state_dict)
     return sam
 
@@ -165,7 +165,7 @@ def _build_sam3D_ori(
     sam.eval()
     if checkpoint is not None:
         with open(checkpoint, "rb") as f:
-            state_dict = torch.load(f)
+            state_dict = torch.load(f, weights_only=False)
         sam.load_state_dict(state_dict)
     return sam
 def _build_sam3D_fast(
@@ -213,6 +213,6 @@ def _build_sam3D_fast(
     sam.eval()
     if checkpoint is not None:
         with open(checkpoint, "rb") as f:
-            state_dict = torch.load(f)
+            state_dict = torch.load(f, weights_only=False)
         sam.load_state_dict(state_dict)
     return sam
